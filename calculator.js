@@ -7,11 +7,6 @@ let isSecondNumber = false;
 
 var vFinal;
 
-function roundToDecimals(number, decimals) {
-    const factor = Math.pow(10, decimals);
-    return Math.round(number * factor) / factor;
-}
-
 function pressNumber(num) {
     if (!isSecondNumber) {
         a += num.toString();
@@ -32,8 +27,6 @@ function pressOperator(operator) {
 function equals() {
     if (a !== "" && b !== "" && o !== null) {
         let result = operate(o, parseFloat(a), parseFloat(b));
-
-        result = roundToDecimals(result, 4);
 
         display.innerText = result.toString();
 
