@@ -1,18 +1,66 @@
-let result = null;
+const display = document.getElementById("display");
 
-function operate(s, a, b) {
-    switch (s) {
+let a = "";
+let b = "";
+let o = null;
+let isSecondNumber = false;
+
+var vFinal;
+
+function roundToDecimals(number, decimals) {
+    const factor = Math.pow(10, decimals);
+    return Math.round(number * factor) / factor;
+}
+
+function pressNumber(num) {
+    if (!isSecondNumber) {
+        a += num.toString();
+        display.innerText = a;
+    } else {
+        b += num.toString();
+        display.innerText = b;
+    }
+}
+
+function pressOperator(operator) {
+    if (a !== "") {
+        o = operator;
+        isSecondNumber = true;
+    }
+}
+
+function equals() {
+    if (a !== "" && b !== "" && o !== null) {
+        let result = operate(o, parseFloat(a), parseFloat(b));
+
+        result = roundToDecimals(result, 4);
+
+        display.innerText = result.toString();
+
+        a = result.toString();
+        b = "";
+        o = null;
+        isSecondNumber = false;
+    }
+}
+
+function operate(o, a, b) {
+    switch (o) {
         case "+":
-            return a + b;
+            vFinal = a + b;
+            return vFinal.toString();
             break;
         case "-":
-            return a - b;
+            vFinal = a - b;
+            return vFinal.toString();
             break;
         case "*":
-            return a * b;
+            vFinal = a * b;
+            return vFinal.toString();
             break;
         case "/":
-            return a / b;
+            vFinal = a / b;
+            return vFinal.toString();
             break;
     }
 }

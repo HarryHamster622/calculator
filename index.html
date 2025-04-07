@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Calculator</title>
-    <script src="calculator.js"></script>
+    <link rel="stylesheet" href="calcStyles.css">
 </head>
 <body>
-    
+    <div class="calculator">
+        <div id="display">58008</div>
+        <div class="buttons">
+            <div class="row1">
+                <button>AC</button>
+                <button>+/-</button>
+                <button>%</button>
+                <button onclick="pressOperator('/')">/</button>
+            </div>
+            <div class="row2">
+                <button onclick="pressNumber(7)">7</button>
+                <button onclick="pressNumber(8)">8</button>
+                <button onclick="pressNumber(9)">9</button>
+                <button onclick="pressOperator('*')">x</button>
+            </div>
+            <div class="row3">
+                <button onclick="pressNumber(4)">4</button>
+                <button onclick="pressNumber(5)">5</button>
+                <button onclick="pressNumber(6)">6</button>
+                <button onclick="pressOperator('-')">-</button>
+            </div>
+            <div class="row4">
+                <button onclick="pressNumber(1)">1</button>
+                <button onclick="pressNumber(2)">2</button>
+                <button onclick="pressNumber(3)">3</button>
+                <button onclick="pressOperator('+')">+</button>
+            </div>
+            <div class="row5">
+                <button onclick="pressNumber(0)">0</button>
+                <button>.</button>
+                <button onclick="equals()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
 </body>
 </html>
