@@ -57,3 +57,18 @@ function operate(o, a, b) {
             break;
     }
 }
+
+function fullClear() {
+    a = "";
+    b = "";
+    o = null;
+    display.innerText = "";
+}
+
+function signChange() {
+    if (isSecondNumber = false) {
+
+    } else {
+
+    }
+}
