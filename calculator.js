@@ -34,6 +34,12 @@ function equals() {
         b = "";
         o = null;
         isSecondNumber = false;
+    } else {
+        a = "";
+        b = "";
+        o = null;
+        isSecondNumber = false;
+        display.innerText = "ERROR";
     }
 }
 
