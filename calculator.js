@@ -129,3 +129,15 @@ function updateDisplay(text) {
         display.innerText = text;
     }
 }
+
+function makePercent() {
+    if (!isSecondNumber) {
+        a = a / 100;
+        updateDisplay(a);
+        return a;
+    } else if (isSecondNumber) {
+        b = b / 100;
+        updateDisplay(b);
+        return b;
+    }
+}
