@@ -90,16 +90,28 @@ function signChange() {
 function addPoint() {
     if (isSecondNumber == false) {
         if (!a.includes(".")) {
-            a += ".";
-            display.innerText = a;
-            return a;
+            if (a==="") {
+                a = "0.";
+                display.innerText = a;
+                return a;
+            } else {
+               a += ".";
+              display.innerText = a;
+               return a;
+            }
         }
     }
     else if (isSecondNumber == true) {
         if (!b.includes(".")) {
-            b += ".";
-            display.innerText = b;
-            return b;
+            if (b==="") {
+                b = "0.";
+                display.innerText = b;
+                return b;
+            } else {
+               b += ".";
+              display.innerText = b;
+               return b;
+            }
         }
     }
 }
