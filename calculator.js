@@ -123,8 +123,8 @@ function addPoint() {
     }
 }
 function updateDisplay(text) {
-    if (text.length > 12) {
-        display.innerText = text.slice(0, 12);
+    if (text.length > 7) {
+        display.innerText = text.slice(0, 7);
     } else {
         display.innerText = text;
     }
