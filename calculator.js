@@ -11,9 +11,11 @@ function pressNumber(num) {
     if (!isSecondNumber) {
         a += num.toString();
         display.innerText = a;
+        return a;
     } else {
         b += num.toString();
         display.innerText = b;
+        return b;
     }
 }
 
@@ -72,9 +74,32 @@ function fullClear() {
 }
 
 function signChange() {
-    if (isSecondNumber = false) {
+    if (isSecondNumber == false) {
+        a = parseFloat(a) * -1;
+        a = a.toString();
+        display.innerText = a;
+        return a;
+    } else if (isSecondNumber == true) {
+        b = parseFloat(b) * -1;
+        b = b.toString();
+        display.innerText = b;
+        return b;
+    }
+}
 
-    } else {
-
+function addPoint() {
+    if (isSecondNumber == false) {
+        if (!a.includes(".")) {
+            a += ".";
+            display.innerText = a;
+            return a;
+        }
+    }
+    else if (isSecondNumber == true) {
+        if (!b.includes(".")) {
+            b += ".";
+            display.innerText = b;
+            return b;
+        }
     }
 }
