@@ -20,10 +20,10 @@ function pressNumber(num) {
 }
 
 function pressOperator(operator) {
-    if (a !== "" && isSecondNumber == false) {
+    if (a !== "" && !isSecondNumber) {
         o = operator;
         isSecondNumber = true;
-    } else if (isSecondNumber == true) {
+    } else if (isSecondNumber) {
         a = operate(o, parseFloat(a), parseFloat(b));
         b = "";
         o = operator;
@@ -81,7 +81,7 @@ function fullClear() {
 }
 
 function signChange() {
-    if (isSecondNumber == false) {
+    if (!isSecondNumber) {
         a = parseFloat(a) * -1;
         a = a.toString();
         updateDisplay(a);
@@ -95,7 +95,7 @@ function signChange() {
 }
 
 function addPoint() {
-    if (isSecondNumber == false) {
+    if (!isSecondNumber) {
         if (!a.includes(".")) {
             if (a==="") {
                 a = "0.";
@@ -108,7 +108,7 @@ function addPoint() {
             }
         }
     }
-    else if (isSecondNumber == true) {
+    else if (isSecondNumber) {
         if (!b.includes(".")) {
             if (b==="") {
                 b = "0.";
