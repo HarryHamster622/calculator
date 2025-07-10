@@ -27,21 +27,25 @@ function pressOperator(operator) {
 }
 
 function equals() {
-    if (a !== "" && b !== "" && o !== null) {
-        let result = operate(o, parseFloat(a), parseFloat(b));
-
-        display.innerText = result.toString();
-
-        a = result.toString();
-        b = "";
-        o = null;
-        isSecondNumber = false;
+    if (a !== "" && b == "" && o == null) {
+        return a;
     } else {
-        a = "";
-        b = "";
-        o = null;
-        isSecondNumber = false;
-        display.innerText = "ERROR";
+        if (a !== "" && b !== "" && o !== null) {
+            let result = operate(o, parseFloat(a), parseFloat(b));
+    
+            display.innerText = result.toString();
+    
+            a = result.toString();
+            b = "";
+            o = null;
+            isSecondNumber = false;
+        } else {
+            a = "";
+            b = "";
+            o = null;
+            isSecondNumber = false;
+            display.innerText = "ERROR";
+        }
     }
 }
 
@@ -50,19 +54,15 @@ function operate(o, a, b) {
         case "+":
             vFinal = a + b;
             return vFinal.toString();
-            break;
         case "-":
             vFinal = a - b;
             return vFinal.toString();
-            break;
         case "*":
             vFinal = a * b;
             return vFinal.toString();
-            break;
         case "/":
             vFinal = a / b;
             return vFinal.toString();
-            break;
     }
 }
 
