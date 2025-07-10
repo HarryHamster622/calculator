@@ -10,11 +10,11 @@ var vFinal;
 function pressNumber(num) {
     if (!isSecondNumber) {
         a += num.toString();
-        display.innerText = a;
+        updateDisplay(a);
         return a;
     } else {
         b += num.toString();
-        display.innerText = b;
+        updateDisplay(b);
         return b;
     }
 }
@@ -27,7 +27,7 @@ function pressOperator(operator) {
         a = operate(o, parseFloat(a), parseFloat(b));
         b = "";
         o = operator;
-        display.innerText = a;
+        updateDisplay(a);
     }
 }
 
@@ -84,12 +84,12 @@ function signChange() {
     if (isSecondNumber == false) {
         a = parseFloat(a) * -1;
         a = a.toString();
-        display.innerText = a;
+        updateDisplay(a);
         return a;
     } else if (isSecondNumber == true) {
         b = parseFloat(b) * -1;
         b = b.toString();
-        display.innerText = b;
+        updateDisplay(b);
         return b;
     }
 }
@@ -99,11 +99,11 @@ function addPoint() {
         if (!a.includes(".")) {
             if (a==="") {
                 a = "0.";
-                display.innerText = a;
+                updateDisplay(a);
                 return a;
             } else {
                a += ".";
-              display.innerText = a;
+              updateDisplay(a);
                return a;
             }
         }
@@ -112,13 +112,20 @@ function addPoint() {
         if (!b.includes(".")) {
             if (b==="") {
                 b = "0.";
-                display.innerText = b;
+                updateDisplay(b);
                 return b;
             } else {
                b += ".";
-              display.innerText = b;
+              updateDisplay(b);
                return b;
             }
         }
+    }
+}
+function updateDisplay(text) {
+    if (text.length > 12) {
+        display.innerText = text.slice(0, 12);
+    } else {
+        display.innerText = text;
     }
 }
