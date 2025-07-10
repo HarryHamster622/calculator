@@ -27,7 +27,8 @@ function pressOperator(operator) {
 }
 
 function equals() {
-    if (a !== "" && b == "" && o == null) {
+    if (a !== "" && b == "") {
+        display.innerHTML = a;
         return a;
     } else {
         if (a !== "" && b !== "" && o !== null) {
