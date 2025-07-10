@@ -20,9 +20,14 @@ function pressNumber(num) {
 }
 
 function pressOperator(operator) {
-    if (a !== "") {
+    if (a !== "" && isSecondNumber == false) {
         o = operator;
         isSecondNumber = true;
+    } else if (isSecondNumber == true) {
+        a = operate(o, parseFloat(a), parseFloat(b));
+        b = "";
+        o = operator;
+        display.innerText = a;
     }
 }
 
@@ -71,6 +76,7 @@ function fullClear() {
     a = "";
     b = "";
     o = null;
+    isSecondNumber = false;
     display.innerText = "";
 }
 
