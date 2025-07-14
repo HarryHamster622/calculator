@@ -14,7 +14,7 @@ function pressNumber(num) {
         return a;
     } else {
         b += num.toString();
-        a = updateDisplay(b);
+        b = updateDisplay(b);
         return b;
     }
 }
