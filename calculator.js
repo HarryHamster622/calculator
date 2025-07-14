@@ -39,9 +39,9 @@ function equals() {
         if (a !== "" && b !== "" && o !== null) {
             let result = operate(o, parseFloat(a), parseFloat(b));
     
-            updateDisplay(result.toString());
+            updateDisplay(result.toString().slice(0, 7));
     
-            a = result.toString();
+            a = result.toString().slice(0,7);
             b = "";
             o = null;
             isSecondNumber = false;
@@ -124,13 +124,15 @@ function addPoint() {
 }
 function updateDisplay(text) {
     if (text.length > 7) {
-        display.innerText = text.slice(0, 7);
+        text = text.slice(0, 7);
+        display.innerText = text;
+        return text;
     } else {
         display.innerText = text;
     }
 }
 
-function makePercent() {
+function makePercent() {gi
     if (!isSecondNumber) {
         a = a / 100;
         updateDisplay(a);
