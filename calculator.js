@@ -10,11 +10,11 @@ var vFinal;
 function pressNumber(num) {
     if (!isSecondNumber) {
         a += num.toString();
-        updateDisplay(a);
+        a = updateDisplay(a);
         return a;
     } else {
         b += num.toString();
-        updateDisplay(b);
+        a = updateDisplay(b);
         return b;
     }
 }
@@ -42,7 +42,7 @@ function equals() {
             updateDisplay(result.toString().slice(0, 7));
     
             a = result.toString().slice(0,7);
-            b = "";
+            b = "";g
             o = null;
             isSecondNumber = false;
         } else {
@@ -129,6 +129,7 @@ function updateDisplay(text) {
         return text;
     } else {
         display.innerText = text;
+        return text;
     }
 }
 
