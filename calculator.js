@@ -39,7 +39,7 @@ function equals() {
         if (a !== "" && b !== "" && o !== null) {
             let result = operate(o, parseFloat(a), parseFloat(b));
     
-            display.innerText = result.toString();
+            updateDisplay(result.toString());
     
             a = result.toString();
             b = "";
@@ -50,7 +50,7 @@ function equals() {
             b = "";
             o = null;
             isSecondNumber = false;
-            display.innerText = "ERROR";
+            updateDisplay("ERROR");
         }
     }
 }
@@ -77,7 +77,7 @@ function fullClear() {
     b = "";
     o = null;
     isSecondNumber = false;
-    display.innerText = "";
+    updateDisplay("");
 }
 
 function signChange() {
