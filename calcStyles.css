@@ -6,6 +6,8 @@
     width: 33%;
     padding: 8px;
     justify-content: space-between;
+    margin: 0 auto;
+    border-radius: 5%;
 }
 #display {
     background-color: white;

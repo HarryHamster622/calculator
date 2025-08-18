@@ -133,7 +133,7 @@ function updateDisplay(text) {
     }
 }
 
-function makePercent() {gi
+function makePercent() {
     if (!isSecondNumber) {
         a = a / 100;
         updateDisplay(a);
